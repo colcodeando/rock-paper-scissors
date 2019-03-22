@@ -5,7 +5,16 @@
     </head>
     <body>
         <script>
-        
+            function computerPlay() {
+                let turn = Math.floor((Math.random() * 3) + 1);
+                if (turn == 1) {
+                    return 'Rock';
+                } else if (turn == 2) {
+                    return 'Paper';
+                } else {
+                    return 'Scissors';
+                }
+            }
         </script>
     </body>
 </html>
