@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Rock, paper, scissors</title>
     </head>
+
     <body>
         <script>
             function computerPlay() {
@@ -15,6 +17,42 @@
                     return 'Scissors';
                 }
             }
+
+            function playRound(playerSelection, computerSelection) {
+                 if (playerSelection == 'ROCK') {
+                     if (computerSelection == 'Rock') {
+                         return 'It\'s a tie, try again!';
+                     } else if (computerSelection == 'Paper') {
+                         return 'You lose! Paper beats Rock';
+                     } else {
+                         return 'You win! Rock beats Scissors';
+                     }
+                 } else if (playerSelection == 'PAPER') {
+                     if (computerSelection == 'Rock') {
+                         return 'You win! Paper beats Rock';
+                     } else if (computerSelection == 'Paper') {
+                         return 'It\'s a tie, try again!';
+                     } else {
+                         return 'You lose! Scissors beats Paper';
+                     }
+                 } else if (playerSelection == 'SCISSORS') {
+                     if (computerSelection == 'Rock') {
+                         return 'You lose! Rock beats Scissors';
+                     } else if (computerSelection == 'Paper') {
+                         return 'You win! Scissors beats Paper';
+                     } else {
+                         return 'It\'s a tie, try again!';
+                     }
+                 } else {
+                     return 'You must select: Rock, Paper or Scissors';
+                 }
+            }
+
+            let playerTurn = 'rock';
+            let playerSelection = playerTurn.toUpperCase();
+            let computerSelection = computerPlay();
+            console.log(playRound(playerSelection, computerSelection));
+
         </script>
     </body>
 </html>
