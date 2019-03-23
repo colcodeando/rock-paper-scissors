@@ -51,10 +51,11 @@
             let computerSelection = computerPlay();
 
             function game() {
+                console.log('Let\'s play 5 rounds of Rock, Paper, Scissors!');
                 let playerScore = 0;
                 let computerScore = 0;
                 for (let i = 1; i < 6; i++) {
-                    let playerSelection = prompt('Round: ' + i + ' Rock, Paper, Scissors?');
+                    let playerSelection = prompt('Round: ' + i + '. Rock, Paper, Scissors?');
                     let round = playRound(playerSelection.toUpperCase(), computerSelection);
                     if (round.includes('win')) {
                         console.log('Round: ' + i);
