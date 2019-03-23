@@ -69,6 +69,13 @@
                         console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
                     }
                 }
+                if (playerScore > computerScore) {
+                    console.log('You win! ' + playerScore + ' - ' + computerScore);
+                } else if (playerScore < computerScore) {
+                    console.log('You lose! ' + playerScore + ' - ' + computerScore);
+                } else {
+                    console.log('You tied! ' + playerScore + ' - ' + computerScore);
+                }
             }
             game();
         </script>
