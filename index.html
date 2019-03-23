@@ -57,14 +57,17 @@
                     let playerSelection = prompt('Round: ' + i + ' Rock, Paper, Scissors?');
                     let round = playRound(playerSelection.toUpperCase(), computerSelection);
                     if (round.includes('win')) {
+                        console.log('Round: ' + i);
                         console.log(round);
                         playerScore++;
                         console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
                     } else if (round.includes('lose')) {
+                        console.log('Round: ' + i);
                         console.log(round);
                         computerScore++;
                         console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
                     } else {
+                        console.log('Round: ' + i);
                         console.log(round);
                         console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
                     }
