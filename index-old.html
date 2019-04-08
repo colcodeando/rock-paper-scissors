@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rock, paper, scissors</title>
+    </head>
+
+    <body>
+        <script>
+            function computerPlay() {
+                let turn = Math.floor((Math.random() * 3) + 1); // selects a random number between 1 and 3
+                if (turn == 1) {
+                    return 'Rock';
+                } else if (turn == 2) {
+                    return 'Paper';
+                } else {
+                    return 'Scissors';
+                }
+            }
+
+            function playRound(playerSelection, computerSelection) { //rock, paper, scissors function
+                 if (playerSelection == 'ROCK') {
+                     if (computerSelection == 'Rock') {
+                         return 'It\'s a tie, try again!';
+                     } else if (computerSelection == 'Paper') {
+                         return 'You lose! Paper beats Rock';
+                     } else {
+                         return 'You win! Rock beats Scissors';
+                     }
+                 } else if (playerSelection == 'PAPER') {
+                     if (computerSelection == 'Rock') {
+                         return 'You win! Paper beats Rock';
+                     } else if (computerSelection == 'Paper') {
+                         return 'It\'s a tie, try again!';
+                     } else {
+                         return 'You lose! Scissors beats Paper';
+                     }
+                 } else if (playerSelection == 'SCISSORS') {
+                     if (computerSelection == 'Rock') {
+                         return 'You lose! Rock beats Scissors';
+                     } else if (computerSelection == 'Paper') {
+                         return 'You win! Scissors beats Paper';
+                     } else {
+                         return 'It\'s a tie, try again!';
+                     }
+                 } else {
+                     return 'You must select: Rock, Paper or Scissors';
+                 }
+            }
+
+            let computerSelection = computerPlay();
+
+            function game() {
+                console.log('Let\'s play 5 rounds of Rock, Paper, Scissors!');
+                let playerScore = 0;
+                let computerScore = 0;
+                for (let i = 1; i < 6; i++) {
+                    let playerSelection = prompt('Round: ' + i + '. Rock, Paper, Scissors?');
+                    let round = playRound(playerSelection.toUpperCase(), computerSelection);
+                    if (round.includes('win')) {
+                        console.log('Round: ' + i);
+                        console.log(round);
+                        playerScore++;
+                        console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
+                    } else if (round.includes('lose')) {
+                        console.log('Round: ' + i);
+                        console.log(round);
+                        computerScore++;
+                        console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
+                    } else {
+                        console.log('Round: ' + i);
+                        console.log(round);
+                        console.log('Player: ' + playerScore + ' | ' + 'Computer: ' + computerScore);
+                    }
+                }
+                if (playerScore > computerScore) {
+                    console.log('You win! ' + playerScore + ' - ' + computerScore);
+                } else if (playerScore < computerScore) {
+                    console.log('You lose! ' + playerScore + ' - ' + computerScore);
+                } else {
+                    console.log('You tied! ' + playerScore + ' - ' + computerScore);
+                }
+            }
+            
+            game();
+        </script>
+    </body>
+</html>
